@@ -1,9 +1,5 @@
 <template>
-	<div id="secondcomponent">
-		<h1>I am second component</h1>
-		<a>written by {{author}}</a>
-		<p>感谢大家的指导</p>
-		<hr>
+	<div id="coming">
 		<ul>
 			<li v-for="article in articles">
 				{{article.title}}
@@ -22,7 +18,7 @@
 			}
 		},
 		mounted: function(){
-			this.$http.jsonp('https://api.douban.com/v2/movie/top250?count=10',{},{
+			this.$http.jsonp('https://api.douban.com/v2/movie/coming_soon?count=10',{},{
 				headers: {
 
 				},

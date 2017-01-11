@@ -1,9 +1,5 @@
 <template>
-	<div id="secondcomponent">
-		<h1>I am second component</h1>
-		<a>written by {{author}}</a>
-		<p>感谢大家的指导</p>
-		<hr>
+	<div id="top250">
 		<ul>
 			<li v-for="article in articles">
 				{{article.title}}

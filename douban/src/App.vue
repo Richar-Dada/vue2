@@ -1,24 +1,38 @@
 <template>
   <div id="app">
-    <img src="./assets/logo.png">
     <h1>{{ msg }}</h1>
-    <first-component></first-component>
+    <ul class="menu">
+      <li>
+        <router-link to="/good">正在上映</router-link>
+      </li>
+      <li>
+        <router-link to="/coming">即将上映</router-link>
+      </li>
+      <li>
+        <router-link to="/top250">TOP250</router-link>
+      </li>
+    </ul>
+    <router-view class="view"></router-view>
   </div>
-
 </template>
 
 <script>
-import Hello from './components/Hello'
 import firstComponent from './components/first-component';
+import coming from './components/coming';
+import good from './components/good';
+import top250 from './components/top250';
 
 export default {
   data(){
     return {
-      msg: 'Hello Vue!'
+      msg: '豆瓣电影'
     }
   },
   components: {
-    firstComponent
+    firstComponent,
+    coming,
+    good,
+    top250
   }
 }
 </script>

@@ -4,6 +4,7 @@ import Vue from 'vue'
 import VueRouter from 'vue-router'
 import VueResource from 'vue-resource'
 import App from './App'
+import Index from './Index'
 
 Vue.config.debug = true;
 
@@ -15,19 +16,29 @@ const First = {
 }
 
 import secondcomponent from './components/second-component';
+import coming from './components/coming';
+import good from './components/good';
+import top250 from './components/top250';
+import detail from './components/detail';
 
 const router = new VueRouter({
 	mode: 'history',
 	base: __dirname,
 	routes: [{
-		path: '/first',
-		component: First
+		path: '/coming',
+		component: coming
 	},{
-		path: '/second',
-		component: secondcomponent
+		path: '/good',
+		component: good
 	},{
-		path: '/3',
-		redirect: '/'
+		path: '/top250',
+		component: top250
+	},{
+		path: '/',
+		component: App
+	},{
+		path: '/detail',
+		component: detail
 	}]
 })
 
@@ -40,5 +51,5 @@ const router = new VueRouter({
 
 const app = new Vue({
 	router: router,
-	render: h => h(App)
+	render: h => h(Index)
 }).$mount('#app');
