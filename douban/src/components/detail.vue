@@ -1,6 +1,13 @@
 <template>
     <div id="detail">
-        ddd
+        <ul>
+            <li>{{item.id}}</li>
+            <li>{{item.title}}</li>
+            <li><img :src="item.images" alt=""></li>
+            <li>{{item.countries}}</li>
+            <li>{{item.summary}}</li>
+            
+        </ul>
     </div>
 </template>
 
@@ -8,17 +15,18 @@
     export default {
         data () {
             return {
-                item: ''
+                item: {}
             }
         },
         mounted: function(){
-			this.$http.jsonp('https://api.douban.com/v2/movie/coming_soon?count=10',{},{
+			this.$http.jsonp('https://api.douban.com/v2/movie/subject/'+ this.$route.params.id,{},{
 				headers: {
 
 				},
 				emulateJSON: true,
 			}).then(function(response){
-				this.articles = response.data.subjects;
+				this.item = response.data;
+                console.log(this.item);
 			},function(reject){
 				console.log(response);
 			})

@@ -1,10 +1,12 @@
 <template>
 	<div id="top250">
-		<ul>
-			<li v-for="article in articles">
-				{{article.title}}
-			</li>
-		</ul>
+		<mt-tab-container-item class="list">
+			<mt-cell v-for="article in articles" class="list-item">
+				<router-link :to="{name: 'detail', params: { id: article.id }}">
+					{{ article.title }}
+				</router-link>
+			</mt-cell>
+		</mt-tab-container-item>
 	</div>
 </template>
 
@@ -32,6 +34,12 @@
 	}
 </script>
 
-<style>
-	
+<style lang="less" >
+	.list{
+		.list-item{
+			a{
+				text-decoration: none;
+			}
+		}
+	}
 </style>
