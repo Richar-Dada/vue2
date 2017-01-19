@@ -1,13 +1,14 @@
 <template>
   <div id="home">
 		<x-header :left-options="{showBack: false}">dada糖手记</x-header>
-		<swiper :list="demo01_list" v-model="demo02_index" @on-index-change="demo01_onIndexChange"></swiper>
+		
   </div>
 </template>
 
 <script>
   import XHeader from 'vux/src/components/x-header'
-  import { Swiper } from 'vux/src/components/swiper'
+  import Swiper from 'vux/src/components/swiper/swiper.vue'
+
 
   const imgList = [
 	  'http://placeholder.qiniudn.com/800x300/FF3B3B/ffffff',
@@ -28,8 +29,8 @@
 		  }
 	  },
 	  components: {
-	  	XHeader,
-	  	Swiper
+	  	XHeader
+		
 	  },
 	  methods: {
 	  	demo01_onIndexChange: function(index){
