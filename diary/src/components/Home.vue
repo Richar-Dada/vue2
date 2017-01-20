@@ -1,7 +1,7 @@
 <template>
   <div id="home">
-		<x-header :left-options="{showBack: false}">dada糖手记</x-header>
-		
+		<x-header :left-options="{showBack: false}" >dada糖手记 <a slot="right" @click="creatNews">写手记</a></x-header>
+		<swiper :list="demo01_list" v-model="demo02_index" @on-index-change="demo01_onIndexChange"></swiper>
   </div>
 </template>
 
@@ -29,12 +29,15 @@
 		  }
 	  },
 	  components: {
-	  	XHeader
-		
+	  	XHeader,
+		Swiper
 	  },
 	  methods: {
 	  	demo01_onIndexChange: function(index){
 	  		this.demo01_index = index;
+	  	},
+	  	creatNews: function(){
+	  		this.$router.push('/creat');
 	  	}
 	  }
   }

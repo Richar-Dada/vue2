@@ -38,6 +38,8 @@ module.exports = {
     'no-debugger': process.env.NODE_ENV === 'production' ? 2 : 0,
     "no-unused-vars": 0,
     "no-alert": 1,
-    "no-mixed-spaces-and-tabs": 0
+    "no-mixed-spaces-and-tabs": 0,
+    "no-console": 0,
+    "no-alert": 0
   }
 }
