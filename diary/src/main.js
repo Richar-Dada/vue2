@@ -4,9 +4,19 @@ import Vue from 'vue'
 import VueRouter from 'vue-router'
 import store from './store'
 import App from './App'
+import './config/rem'
+import VueI18n from 'vue-i18n'
+import locales from './config/i18n/'
 
 
 Vue.use(VueRouter)
+Vue.use(VueI18n)
+
+Vue.config.lang = 'zh'
+
+Object.keys(locales).forEach(function(lang){
+	Vue.locale(lang, locales[lang])
+})
 
 
 import Home from './components/Home'
@@ -33,7 +43,8 @@ const routes = [
 		component: CreatNews
 	},
 	{
-		path: '/edit',
+		name: 'edit',
+		path: '/edit/:id',
 		component: EditNews
 	},
 	{

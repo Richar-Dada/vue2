@@ -7,7 +7,13 @@ export default {
 	deleteNews({ commit }, idx){
 		commit(types.DELETE_NEWS, idx)
 	},
-	updateNews({ commit }, idx, news){
-		commit(types.UPDATE_NEWS, idx, news)
+	updateNews({ commit }, news){
+		commit(types.UPDATE_NEWS, news)
+	},
+	getActiveNews({ commit }, idx){
+		commit(types.GET_ACTIVE_NEWS, idx)
+	},
+	setActiveNews({ commit }, idx){
+		commit(types.SET_ACTIVE_NEWS, idx)
 	}
 }

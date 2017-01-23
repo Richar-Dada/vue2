@@ -1,7 +1,12 @@
 <template>
   <div id="home">
-		<x-header :left-options="{showBack: false}" >dada糖手记 <a slot="right" @click="creatNews">写手记</a></x-header>
+		<x-header :left-options="{showBack: false}" ><a slot="left" @click="checkList">手记列表</a>{{ $t("index-title") }} <a slot="right" @click="creatNews">{{ $t("write-news") }}</a></x-header>
 		<swiper :list="demo01_list" v-model="demo02_index" @on-index-change="demo01_onIndexChange"></swiper>
+		<div class="newest-item">
+			<h2>最新手记</h2>
+			<h4>{{ newestNews.title }}</h4>
+			<p>{{  newestNews.content }}</p>
+		</div>
   </div>
 </template>
 
@@ -38,7 +43,22 @@
 	  	},
 	  	creatNews: function(){
 	  		this.$router.push('/creat');
+	  	},
+	  	checkList: function(){
+	  		this.$router.push('/list');
 	  	}
+	  },
+	  computed: {
+	  	newestNews () {
+	  		return this.$store.getters.getNewestNews;
+	  	} 
 	  }
   }
 </script>
+
+<style lang="scss">
+	.newest-item{
+		padding: 0 10px;
+	}
+
+</style>

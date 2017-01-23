@@ -53,6 +53,7 @@
 		margin-top:-20px;
 	}
 	.complete-btn{
-		margin: 10px 20px;
+		width: 94%!important;
+		margin: 10px auto;
 	}
 </style>
